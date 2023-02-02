@@ -1,15 +1,13 @@
 package task_02;
 
-// Исправьте ошибки.
-// Должно быть: вывод фруктов, потом овощей
 public class Main {
 
     public static void main(String[] arg) throws InterruptedException {
 
-        /* ??? **/ = new Fruits();
-        fruits.start();
-        fruits./* метод ждет пока этот поток умрет, и подсоединяет другой поток **/
+        Fruits fruits = new Fruits();
 
+        fruits.start();
+        fruits.join();
         showVeges(getVeges());
     }
 
@@ -17,7 +15,7 @@ public class Main {
         return new String[]{"tomato", "cucumber", "carrot"};
     }
 
-    private static void showVeges(/* ??? **/) {
+    private static void showVeges(String[] veges) {
         for (String veg : veges) System.out.println(veg);
     }
 }

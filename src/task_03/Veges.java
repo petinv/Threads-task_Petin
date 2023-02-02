@@ -1,9 +1,8 @@
 package task_03;
 
-// Исправьте ошибки.
-class Veges {
+class Veges extends Thread {
 
-    public Veges(Thread group, String name) {
+    public Veges(ThreadGroup group, String name) {
         super(group, name);
     }
 
@@ -19,7 +18,7 @@ class Veges {
         }
     }
 
-    private /* ??? **/ getVeges() {
+    private String[] getVeges() {
         return new String[]{"tomato", "cucumber", "carrot"};
     }
 }

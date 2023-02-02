@@ -1,20 +1,19 @@
 package task_01;
 
-// Исправьте ошибки.
-public class Robot {
+public class Robot extends Thread {
 
     Robot(String str) {
         super(str);
     }
 
     public void run() {
-        System.out.println(Thread.currentThread()./* метод взврата имени потока **/ + " Started");
+        System.out.println(Thread.currentThread().getName() + " Started");
         try {
-            Robot./* поток засыпает на 1,5 секунды **/
-            System.out.println(Thread.currentThread()/* метод взврата имени потока **/ + " Waiting...");
+            Robot.sleep(1500);
+            System.out.println(Thread.currentThread().getName() + " Waiting...");
         } catch (InterruptedException ie) {
             System.out.println("Exception: " + ie);
         }
-        System.out.println(Thread.currentThread()/* метод взврата имени потока **/ + " Stopped");
+        System.out.println(Thread.currentThread().getName() + " Stopped");
     }
 }

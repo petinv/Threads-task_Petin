@@ -1,18 +1,17 @@
 package task_04;
 
-// Исправьте ошибки.
 public class Main {
 
     public static void main(String[] args) {
 
         Fruits fruits = new Fruits();
-        fruits.start();
-        fruits./* метод прерывает этот поток **/
 
-        showVeges();
+        fruits.start();
+        fruits.interrupt();
+        showVeges(getVeges());
     }
 
-    private static /* ??? **/ getVeges() {
+    private static String[] getVeges() {
         return new String[]{"tomato", "cucumber", "carrot"};
     }
 
